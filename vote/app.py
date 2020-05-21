@@ -40,7 +40,7 @@ def hello():
     resp.set_cookie('voter_id', voter_id)
     return resp
 
-@app.route("/", methods=['GET'])
+@app.route("/notes", methods=['GET'])
 def notes():
     resp = make_response(render_template(
         'notes.html',
