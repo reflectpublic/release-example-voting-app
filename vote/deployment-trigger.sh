@@ -10,7 +10,14 @@ echo "=== Triggering Reflect tests ==="
 echo "Tag=${Tag}"
 echo "Host=${VOTE_INGRESS_HOST}"
 
-curl -X POST \
+curl --silent -X POST \
   -H "X-API-KEY: ${REFLECT_API_KEY}" \
-  -d "{}" \
+  -d "{ \
+    \"overrides\": { \
+      \"hostnames\": [{ \
+        \"original\": \"vote-staging-reflect-voting-app.releaseapp.io\", \
+        \"replacement\": \"${VOTE_INGRESS_HOST}\" \
+      }] \
+    } \
+  }" \
   https://api.reflect.run/v1/tags/${Tag}/executions
