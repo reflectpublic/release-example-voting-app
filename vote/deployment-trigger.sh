@@ -1,3 +1,5 @@
+#!/bin/sh
+
 #
 # Execute commands after Release environment is fully deployed.
 #
