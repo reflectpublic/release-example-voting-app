@@ -1,5 +1,3 @@
-#!/bin/bash
-
 #
 # Execute commands after Release environment is fully deployed.
 #
