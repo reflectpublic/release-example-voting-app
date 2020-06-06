@@ -9,7 +9,8 @@ Tag="release-tests"
 echo "=== Triggering Reflect tests ==="
 echo "Tag=${Tag}"
 echo "Host=${VOTE_INGRESS_HOST}"
-
+echo
+echo "Response:"
 curl --silent -X POST \
   -H "X-API-KEY: ${REFLECT_API_KEY}" \
   -d "{ \
