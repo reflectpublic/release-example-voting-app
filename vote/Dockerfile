@@ -8,16 +8,15 @@ WORKDIR /app
 ADD requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
-ADD deployment-trigger.sh /app/deployment-trigger.sh
-RUN chmod +rwx /app/deployment-trigger.sh
-
 # Copy our code from the current folder to /app inside the container
 ADD . /app
 
 # Make port 80 available for links and/or publish
 EXPOSE 80
 
+# Add curl and script for deploy trigger.
 RUN apk add --no-cache curl
+RUN chmod +rwx /app/deployment-trigger.sh
 
 # Define our command to be run when launching the container
 CMD ["gunicorn", "app:app", "-b", "0.0.0.0:80", "--log-file", "-", "--access-logfile", "-", "--workers", "4", "--keep-alive", "0"]
