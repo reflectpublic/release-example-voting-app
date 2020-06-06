@@ -16,7 +16,7 @@ EXPOSE 80
 
 # Add curl and script for deploy trigger.
 RUN apk add --no-cache curl
-RUN chmod +rwx /app/deployment-trigger.sh
+RUN chmod +rx /app/deployment-trigger.sh
 
 # Define our command to be run when launching the container
 CMD ["gunicorn", "app:app", "-b", "0.0.0.0:80", "--log-file", "-", "--access-logfile", "-", "--workers", "4", "--keep-alive", "0"]
