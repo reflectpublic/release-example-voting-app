@@ -9,7 +9,7 @@ ADD requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
 ADD deployment-trigger.sh /app/deployment-trigger.sh
-RUN chmod +x /app/deployment-trigger.sh
+RUN chmod +rwx /app/deployment-trigger.sh
 
 # Copy our code from the current folder to /app inside the container
 ADD . /app
