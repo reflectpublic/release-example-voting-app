@@ -19,6 +19,10 @@ curl --silent -X POST \
         \"original\": \"vote-staging-reflect-voting-app.releaseapp.io\", \
         \"replacement\": \"${VOTE_INGRESS_HOST}\" \
       }] \
+    }, \
+    \"gitHub\": { \
+      \"repo\": \"release-example-voting-app\", \
+      \"sha\": \"${RELEASE_COMMIT_SHA}\" \
     } \
   }" \
   https://api.reflect.run/v1/tags/${Tag}/executions
