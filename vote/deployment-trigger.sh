@@ -9,6 +9,7 @@ Tag="release-tests"
 echo "=== Triggering Reflect tests ==="
 echo "Tag=${Tag}"
 echo "Host=${VOTE_INGRESS_HOST}"
+echo "SHA=${RELEASE_COMMIT_SHA}"
 echo
 echo "Response:"
 curl --silent -X POST \
