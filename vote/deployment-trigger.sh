@@ -15,6 +15,7 @@ echo "Response:"
 curl --silent -X POST \
   -H "X-API-KEY: ${REFLECT_API_KEY}" \
   -d "{ \
+    \"parallelism\": 0, \
     \"overrides\": { \
       \"hostnames\": [{ \
         \"original\": \"vote-staging-reflect-voting-app.releaseapp.io\", \
